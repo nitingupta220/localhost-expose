@@ -5,6 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 
+const PORT = process.env.PORT || 2001
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -38,4 +40,4 @@ app.post("/url", async (req, res) => {
   res.send(url);
 });
 
-app.listen(2001, () => console.log("App running on port 2001"));
+app.listen(PORT, () => console.log("App running on port 2001"));
